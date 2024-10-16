@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // базовый URL
-const API_BASE_URL = 'http://localhost:5000/api/';
+const API_BASE_URL = 'https://freevetback.ru/';
 
 // Создаем экземпляр axios с базовыми настройками для формата Json
 const apiClientJson = axios.create({
