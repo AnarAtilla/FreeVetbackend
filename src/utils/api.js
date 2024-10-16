@@ -19,26 +19,16 @@ const apiClientMultipart = axios.create({
   },
 });
 
-// 1. users/login/google/ - регистрация и вход google
-export const loginUserGoogle = async (data) => {
-  try {
-    const response = await apiClientJson.post('users/login/google/', data);
-    return response.data;
-  } catch (error) {
-    console.error('Ошибка входа:', error);
-    throw error;
-  }
+// 1. users/login/google/ - регистрация и вход google через редирект
+export const loginUserGoogle = () => {
+  // Редирект на серверный маршрут, который ведет на Google OAuth
+  window.location.href = `${API_BASE_URL}users/login/google/`;
 };
 
-// 2. users/login/facebook/ - регистрация и вход facebook
-export const loginUserFacebook = async (data) => {
-  try {
-    const response = await apiClientJson.post('users/login/facebook/', data);
-    return response.data;
-  } catch (error) {
-    console.error('Ошибка входа:', error);
-    throw error;
-  }
+// 2. users/login/facebook/ - регистрация и вход facebook через редирект
+export const loginUserFacebook = () => {
+  // Редирект на серверный маршрут, который ведет на Facebook OAuth
+  window.location.href = `${API_BASE_URL}users/login/facebook/`;
 };
 
 // 3. users/register/ - регистрация по телефону
@@ -84,5 +74,3 @@ export const addQuestion = async (data) => {
     throw error;
   }
 };
-
-
