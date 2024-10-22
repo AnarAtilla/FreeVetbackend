@@ -31,7 +31,7 @@ const L_registrationPage = () => {
         formData.append("image", image);
       }
 
-      await axios.post("https://freevetback.ru/users/register/", formData, {
+      await axios.post("users/register/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
