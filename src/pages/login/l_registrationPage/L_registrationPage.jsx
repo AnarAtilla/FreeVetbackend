@@ -31,7 +31,7 @@ const L_registrationPage = () => {
         formData.append("image", image);
       }
 
-      await axios.post("users/register/", formData, {
+      await axios.post("/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
